@@ -1,0 +1,22 @@
+<h1>Next 5</h1>
+
+<p>Test</p>
+
+<p *ngIf="!next5"><em>Loading...</em></p>
+<p>{{next5[0]}}</p>
+<p>{{next5[0].meetingName}}</p>
+
+<table class='table' >
+    <thead>
+        <tr>
+          
+            <th>Summary</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let next of next5">
+            <td>{{ next.meetingName }}</td>
+            
+        </tr>
+    </tbody>
+</table>
