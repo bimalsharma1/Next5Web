@@ -1,0 +1,17 @@
+
+<p *ngIf="!race"><em>Loading...</em></p>
+    <div class="race row">
+        <div>Race: {{race.raceName}}</div>
+     </div>
+    <table class="competitor table">
+        <tr>
+        <th>Competitor</th>
+        <th>Start Position</th>
+        </tr>
+
+        <tr class="competitor" *ngFor="let comp of race.competitor">
+            <td>{{comp.name}}</td>
+            <td>{{comp.startPosition}}</td>
+        </tr>
+    </table>
+

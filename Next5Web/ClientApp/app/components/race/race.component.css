@@ -1,0 +1,28 @@
+
+.race {
+    font: bold;
+    background-color: lightblue;
+    padding: 5px;
+    margin-bottom:5px;
+
+}
+.competitors {
+    background-color: lightcyan;
+}
+.competitor {
+    border: solid 1px black;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
