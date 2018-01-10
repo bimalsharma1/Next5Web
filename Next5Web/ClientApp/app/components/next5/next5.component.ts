@@ -22,9 +22,9 @@ export class Next5Component implements OnInit {
     }
 
     public getCurrentDate(dateTimeToCompare: Date): boolean {
-        let currentDateTime = new Date()
-       // console.log(dateTimeToCompare.toLocaleTimeString())
-      //  console.log(currentDateTime.toLocaleTimeString())
+        let currentDateTime = new Date().getTime()
+        console.log(dateTimeToCompare)
+        console.log(currentDateTime)
         return true;// currentDateTime > dateTimeToCompare
 
     }
