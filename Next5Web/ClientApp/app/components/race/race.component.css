@@ -8,6 +8,7 @@
 }
 .competitors {
     background-color: lightcyan;
+    margin-left:-16px;
 }
 .competitor {
     border: solid 1px black;

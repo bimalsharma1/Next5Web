@@ -10,22 +10,27 @@ import { ActivatedRoute, Router, ParamMap } from '@angular/router';
 })
 export class Next5Component implements OnInit {
     public next5: any;
+    baseUrl: string
 
 
-    constructor(private router: Router, http: Http, @Inject('BASE_URL') baseUrl: string) {
-        http.get(baseUrl + 'api/next5').subscribe(result => {
+    constructor(private router: Router, private http: Http, @Inject('BASE_URL') baseUrl: string) {
+        this.baseUrl = baseUrl
+    }
+
+    ngOnInit() {
+        this.http.get(this.baseUrl + 'api/next5').subscribe(result => {
             this.next5 = result.json();
         }, error => console.error(error));
     }
 
-    ngOnInit() {
-    }
-
     public getCurrentDate(dateTimeToCompare: Date): boolean {
         let currentDateTime = new Date().getTime()
-        console.log(dateTimeToCompare)
-        console.log(currentDateTime)
-        return true;// currentDateTime > dateTimeToCompare
+        let dateTime = new Date(dateTimeToCompare).getTime()
+
+        //console.log(currentDateTime)
+       // console.log(new Date(dateTimeToCompare).getTime())
+
+        return currentDateTime > dateTime
 
     }
 

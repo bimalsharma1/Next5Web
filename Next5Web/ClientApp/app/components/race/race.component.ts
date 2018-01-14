@@ -11,16 +11,16 @@ import 'rxjs/add/operator/switchMap';
 export class RaceComponent implements OnInit{
     public race: any;
     currentTime: Date;
+    baseUrl: string
 
-    constructor(private route: ActivatedRoute, http: Http, @Inject('BASE_URL') baseUrl: string) {
-        http.get(baseUrl + 'api/race/' + this.route.snapshot.paramMap.get('id')).subscribe(result => {
-            this.race = result.json() ;
-        }, error => console.error(error));
-   
-        
+    constructor(private route: ActivatedRoute, private http: Http, @Inject('BASE_URL') baseUrl: string) {
+        this.baseUrl = baseUrl
     }
 
     ngOnInit() {
+        this.http.get(this.baseUrl + 'api/race/' + this.route.snapshot.paramMap.get('id')).subscribe(result => {
+            this.race = result.json();
+        }, error => console.error(error));
        
     }
 

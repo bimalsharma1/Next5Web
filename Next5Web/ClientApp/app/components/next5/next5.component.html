@@ -4,9 +4,12 @@
 
 <div class="row">
     <div class="next5 col-xs-12 col-sm-12 col-md-3 col-lg-3" *ngFor="let nextRace of next5" (click)="navigateToRace(nextRace.races[0].raceNo)">
+        <div *ngIf="getCurrentDate(nextRace.races[0].raceClosedTime)">
             <div>Race Name:  {{nextRace.races[0].raceName}}</div>
             <div>Start Time: {{nextRace.races[0].raceClosedTime | date:"HH:mm:ss"}}</div>
             <a [routerLink]="['race', nextRace.races[0].raceNo]">Go to race</a>
+        </div>
+        <div *ngIf="!getCurrentDate(nextRace.races[0].raceClosedTime)">Race {{nextRace.races[0].raceName}} has started</div>
     </div>
 </div>
 
