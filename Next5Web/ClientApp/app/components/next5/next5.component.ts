@@ -27,10 +27,7 @@ export class Next5Component implements OnInit {
         let currentDateTime = new Date().getTime()
         let dateTime = new Date(dateTimeToCompare).getTime()
 
-        //console.log(currentDateTime)
-       // console.log(new Date(dateTimeToCompare).getTime())
-
-        return currentDateTime > dateTime
+        return currentDateTime < dateTime
 
     }
 

@@ -17,5 +17,5 @@ export class AppModule {
 }
 
 export function getBaseUrl() {
-    return "https://next5api20180107093126.azurewebsites.net/";
+    return "https://next5api20180114101145.azurewebsites.net/";
 }
