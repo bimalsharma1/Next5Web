@@ -9,7 +9,7 @@
             <div>Start Time: {{nextRace.races[0].raceClosedTime | date:"HH:mm:ss"}}</div>
             <a [routerLink]="['race', nextRace.races[0].raceNo]">Go to race</a>
         </div>
-        <div *ngIf="!getCurrentDate(nextRace.races[0].raceClosedTime)">Race {{nextRace.races[0].raceName}} has started</div>
+        <div class="race-started" *ngIf="!getCurrentDate(nextRace.races[0].raceClosedTime)">Race {{nextRace.races[0].raceName}} has started</div>
     </div>
 </div>
 
